@@ -22,12 +22,12 @@ To generate a report run
 
 ```allure serve allure-results```
 
-##Implemented Browsers
+## Implemented Browsers
 Thanks to the awesome webdrivermanager it supports the following browsers:
 
 - Chrome
 - Firefox
 - Safari
 
-##Page Objects Pattern
+## Page Objects Pattern
 page object pattern is used to have reusable WebElements/small helper methods separated from actual test classes and give the opportunity to have nice structured and easily readable tests (without the overhead of BDD-Frameworks like Cucumber or JBehave).
