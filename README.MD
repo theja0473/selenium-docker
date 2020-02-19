@@ -1,5 +1,7 @@
-# Selenium project template
-This project is written in java and will serve an example of implementing a Selenium test project with Selenium3 and Maven. Everything is set up and tests can be added straight away.
+# Selenium + Docker project template
+This project is written in java and will serve an example of implementing a Selenium test project with Selenium3 and Maven and to show how we could use a container (as a host) for running our tests and create the environment (selenium hub and instances of firefox and chrome) to run the tests against it.  Everything is set up and tests can be added straight away.
+In the end we will have . 4 images: tests, hub, chrome, firefox and everything will be running in a container.
+
 ## Pre-requisites
  
 In order to use this framework, you need JDK8 and allure2.
@@ -22,12 +24,10 @@ To generate a report run
 
 ```allure serve allure-results```
 
-## Implemented Browsers
-Thanks to the awesome webdrivermanager it supports the following browsers:
+To start docker
 
-- Chrome
-- Firefox
-- Safari
+```sudo docker-compose up```
+
 
 ## Page Objects Pattern
 page object pattern is used to have reusable WebElements/small helper methods separated from actual test classes and give the opportunity to have nice structured and easily readable tests (without the overhead of BDD-Frameworks like Cucumber or JBehave).
