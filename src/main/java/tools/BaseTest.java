@@ -4,11 +4,13 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Optional;
 import pages.google.GoogleLandingPage;
 
+import java.net.MalformedURLException;
+
 public abstract class BaseTest {
 
   private WebDriver driver;
 
-  public void setUp(@Optional("local-ff") String browser) {
+  public void setUp(@Optional("local-ff") String browser) throws MalformedURLException {
     System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
     driver = DriverFactory.getInstance().getDriver(browser);
   }

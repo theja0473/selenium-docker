@@ -8,11 +8,13 @@ import org.testng.annotations.Test;
 import pages.google.GoogleLandingPage;
 import tools.BaseTest;
 
+import java.net.MalformedURLException;
+
 public class SearchButtonTest extends BaseTest {
     private GoogleLandingPage googleLandingPage;
 
     @BeforeClass
-    public void setUp() {
+    public void setUp() throws MalformedURLException {
         super.setUp("local-chrome");
         googleLandingPage = getGoogleLandingPage();
     }

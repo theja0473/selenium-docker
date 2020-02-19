@@ -19,6 +19,9 @@ import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class DriverFactory {
+  public static final String USERNAME = "katereznykova2";
+  public static final String AUTOMATE_KEY = "yyU6B8o3RLvWNubjKpe5";
+  public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
 
   private DriverFactory() {
   }
@@ -42,7 +45,7 @@ public class DriverFactory {
       ChromeOptions chromeOptions = new ChromeOptions();
       capabilities = DesiredCapabilities.chrome();
       capabilities.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR,
-          UnexpectedAlertBehaviour.DISMISS);
+              UnexpectedAlertBehaviour.DISMISS);
       chromeOptions.merge(capabilities);
       return new ChromeDriver(chromeOptions);
     }
@@ -51,7 +54,7 @@ public class DriverFactory {
       SafariOptions safariOptions = new SafariOptions();
       capabilities = DesiredCapabilities.safari();
       capabilities.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR,
-          UnexpectedAlertBehaviour.DISMISS);
+              UnexpectedAlertBehaviour.DISMISS);
       safariOptions.merge(capabilities);
       return new SafariDriver(safariOptions);
     }
@@ -62,17 +65,17 @@ public class DriverFactory {
         setupGecko();
         capabilities = DesiredCapabilities.firefox();
         capabilities.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR,
-            UnexpectedAlertBehaviour.DISMISS);
+                UnexpectedAlertBehaviour.DISMISS);
         break;
       case "chrome":
         capabilities = DesiredCapabilities.chrome();
         capabilities.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR,
-            UnexpectedAlertBehaviour.DISMISS);
+                UnexpectedAlertBehaviour.DISMISS);
         break;
       case "safari":
         capabilities = DesiredCapabilities.safari();
         capabilities.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR,
-            UnexpectedAlertBehaviour.DISMISS);
+                UnexpectedAlertBehaviour.DISMISS);
         break;
     }
 
@@ -92,7 +95,7 @@ public class DriverFactory {
     WebDriverManager driverManager = FirefoxDriverManager.firefoxdriver();
     driverManager.setup();
     System.out
-        .println(String.format("FF driver version : %s", driverManager.getDownloadedVersion()));
+            .println(String.format("FF driver version : %s", driverManager.getDownloadedVersion()));
   }
 
   private URL getGridHubUrl() {
